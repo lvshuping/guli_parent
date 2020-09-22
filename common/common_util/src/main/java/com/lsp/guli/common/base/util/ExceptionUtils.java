@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
+ * 该工具类是异常信息输出工具类,直接打印的话,不能打印出堆栈跟踪的信息
+ *                             {主要为了能够在日志记录里输出异常堆栈输出信息}
  * @author helen
  * @since 2019/9/25
  */

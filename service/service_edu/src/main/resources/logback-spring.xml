@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration  scan="true" scanPeriod="10 seconds">
 
+
+    <!--日志配置类的名字可以随意但是如果不是logback-spring.xml的话需要在application.yml中去定义名字,否则找不到xml-->
     <contextName>logback</contextName>
 
-    <property name="log.path" value="D:/project/helen/guli_log/edu" />
+    <!--日志输出位置-->
+    <property name="log.path" value="D:/personal/java/project/lsp/guli_log/edu" />
 
     <!--控制台日志格式：彩色日志-->
     <!-- magenta:洋红 -->
     <!-- boldMagenta:粗红-->
     <!-- cyan:青色 -->
     <!-- white:白色 -->
-    <!-- :洋红 -->
+    <!-- :洋红 --><!--控制台输出日志-->
     <property name="CONSOLE_LOG_PATTERN"
               value="%magenta(%date{yyyy-MM-dd HH:mm:ss}) |%highlight(%-5level) |%blue(%thread) |%blue(%file:%line) |%green(%logger) |%cyan(%msg%n)"/>
 
-    <!--文件日志格式-->
+    <!--文件日志格式--><!--输出到文件里-->
     <property name="FILE_LOG_PATTERN"
               value="%date{yyyy-MM-dd HH:mm:ss} |%-5level |%thread |%file:%line |%logger |%msg%n" />
 
@@ -54,6 +57,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 每天日志归档路径以及格式 -->
             <fileNamePattern>${log.path}/info/log-info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--文件大小超过设定最大值换一个文件-->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>500MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>

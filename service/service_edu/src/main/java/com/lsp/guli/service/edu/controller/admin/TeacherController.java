@@ -35,9 +35,9 @@ public class TeacherController {
         return  R.ok().data("items",page);
     }
 
-    @ApiOperation(value = "根据ID删除讲师", notes = "根据ID删除讲师，逻辑删除")
-    @DeleteMapping("remove/{id}")
-    public R removeById(@ApiParam(value = "讲师ID",required = true) @PathVariable String id){
+    @ApiOperation(value = "根据ID删除讲师", notes = "根据ID删除讲师，逻辑删除")/*该注解为swagger的注解,对接口进行注释*/
+    @DeleteMapping("remove/{id}")/*删除请求*/
+    public R removeById(@ApiParam(value = "讲师ID",required = true) @PathVariable String id){/*1.是swagger的注解,对参数进行注释,2.配合上方{id},基础类型参数绑定*/
         boolean b = teacherService.removeById(id);
         if(b){
             return R.ok().message("删除成功!");

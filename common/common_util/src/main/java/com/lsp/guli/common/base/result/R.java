@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 为方便前后端联调,采用统一的返回格式,配合枚举使用
  * @author helen
  * @since 2019/12/25
  */
